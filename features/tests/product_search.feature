@@ -1,7 +1,13 @@
-Feature: Test Scenarios for Search functionality
+Feature: Test cases for Product Search on Target
 
-  Scenario: User can search for a product
-    Given Open Google page
-    When Input Car into search field
-    And Click on search icon
-    Then Product results for Car are shown
+
+  Scenario: User can edit personal info in settings
+    Given Open Reely main page
+    When Login to the Page
+    When Click on Settings Option
+    And Click on Edit Profile Option
+    Then Enter test information
+    Then Check the right information is present
+    And Check the Close and Save Changes buttons are Available
+
+
