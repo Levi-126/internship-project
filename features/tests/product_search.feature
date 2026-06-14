@@ -1,4 +1,4 @@
-Feature: Test cases for Product Search on Target
+Feature: Personal Settings Update on Reely Website
 
 
   Scenario: User can edit personal info in settings
