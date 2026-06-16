@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -8,16 +9,17 @@ def browser_init(context):
     """
     :param context: Behave context
     """
-    # chrome_options = Options()
-    # chrome_options.add_argument("--headless=new")
-    # context.driver = webdriver.Chrome(options=chrome_options)
-
-    context.driver = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument("--headless=new")
+    context.driver = webdriver.Chrome(options=chrome_options)
+    context.driver.set_window_size(1920, 1080)
+    # context.driver = webdriver.Chrome()
     # context.browser = webdriver.Safari()
     # context.browser = webdriver.Firefox()
-    context.driver.maximize_window()
+    # context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.wait = WebDriverWait(context.driver, timeout=15)
+
 
     context.app = Application(context.driver, context.wait)
 
