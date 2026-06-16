@@ -8,5 +8,5 @@ class SettingsPage(Page):
     SETTINGS_BUTTON = (By.XPATH, "//a[@href='https://soft.reelly.io/settings']")
 
     def select_settings(self):
-        self.driver.find_element(*self.SETTINGS_BUTTON).click()
-        sleep(2)
+        self.click(*self.SETTINGS_BUTTON)
+

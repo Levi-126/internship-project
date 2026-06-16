@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 
 from app.application import Application
@@ -7,14 +8,18 @@ def browser_init(context):
     """
     :param context: Behave context
     """
+    # chrome_options = Options()
+    # chrome_options.add_argument("--headless=new")
+    # context.driver = webdriver.Chrome(options=chrome_options)
+
     context.driver = webdriver.Chrome()
-    #context.browser = webdriver.Safari()
+    # context.browser = webdriver.Safari()
     # context.browser = webdriver.Firefox()
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.wait = WebDriverWait(context.driver, timeout=15)
 
-    context.app = Application(context.driver)
+    context.app = Application(context.driver, context.wait)
 
 
 def before_scenario(context, scenario):

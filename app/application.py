@@ -8,10 +8,10 @@ from pages.input_field_page import InputFields
 
 class Application:
 
-    def __init__(self, driver):
-        self.page = Page(driver)
-        self.sign_in_page = SignInPage(driver)
-        self.main_page = MainPage(driver)
-        self.settings_page = SettingsPage(driver)
-        self.edit_profile_page = EditProfile(driver)
-        self.input_field_page = InputFields(driver)
+    def __init__(self, driver, wait):
+        self.page = Page(driver, wait)
+        self.sign_in_page = SignInPage(driver, wait)
+        self.main_page = MainPage(driver, wait)
+        self.settings_page = SettingsPage(driver, wait)
+        self.edit_profile_page = EditProfile(driver, wait)
+        self.input_field_page = InputFields(driver, wait)
