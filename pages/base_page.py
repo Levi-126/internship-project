@@ -14,9 +14,9 @@ class Page:
     def find_element(self, *locator):
         return self.wait.until(EC.element_to_be_clickable(locator))
 
-    def find_elements(self, *locator):
-        self.wait.until(EC.presence_of_element_located(locator))
-        return self.find_elements(*locator)
+    def find_elements(self, locator):
+        self.wait.until(EC.presence_of_all_elements_located(locator))
+        return self.driver.find_elements(*locator)
 
     def click(self, *locator):
         self.wait.until(EC.element_to_be_clickable(locator)).click()

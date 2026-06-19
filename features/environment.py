@@ -30,10 +30,9 @@ def browser_init(context, scenario_name):
 
     options = Options()
     bstack_options = {
-            "os": "Windows",
-            "osVersion": "11",
-            "browserVersion": "148.0",
-            'browserName': "Chrome",
+            "osVersion" : "16",
+            "deviceName" : "iPhone 14 Plus",
+            'browserName': "safari",
             'sessionName': scenario_name,
     }
     options.set_capability('bstack:options', bstack_options)
