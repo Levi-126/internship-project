@@ -1,6 +1,6 @@
 Feature: Personal Settings Update on Reely Website
 
-
+  @smoke
   Scenario: User can edit personal info in settings
     Given Open Reely main page
     When Login to the Page
